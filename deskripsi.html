@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090914">
+<title>Informasi Hadiah</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 25px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at top, #30215e, transparent 60%),
+    #090914;
+}
+
+.container {
+  width: 100%;
+  max-width: 430px;
+  padding: 28px 22px;
+  background: #17172b;
+  border: 1px solid #5144a0;
+  border-radius: 22px;
+  box-shadow: 0 0 35px #693cff55;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.4;
+  margin: 0 0 25px;
+}
+
+p {
+  color: #d0cfe0;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: left;
+  overflow-wrap: anywhere;
+  margin: 0 0 20px;
+}
+
+.notice {
+  padding: 16px;
+  background: #29213e;
+  border-left: 3px solid #a66cff;
+  border-radius: 8px;
+  color: #e5d9ff;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(120deg, #813cff, #e33cff);
+  box-shadow: 0 0 20px #a13cff66;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #77778f;
+  font-size: 11px;
+}
+
+/* Jendela peringatan */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, .85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 380px;
+  padding: 25px 20px;
+  text-align: center;
+  background: #17172b;
+  border: 1px solid #a66cff;
+  border-radius: 18px;
+  box-shadow: 0 0 30px #693cff66;
+}
+
+.warning-icon {
+  font-size: 42px;
+}
+
+.modal-content h2 {
+  margin: 12px 0;
+}
+
+.modal-content p {
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 15px;
+}
+
+.small-text {
+  margin-top: 15px;
+  color: #88889f;
+  font-size: 11px;
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+  <h1>📢 Informasi Pengambilan Hadiah</h1>
+
+  <p>
+    Selamat! Anda telah berhasil mendapatkan hadiah spesial dari kami.
+    Hadiah ini telah disiapkan khusus untuk penerima yang beruntung.
+  </p>
+
+  <p>
+    Untuk melanjutkan proses pengambilan hadiah, silakan tekan tombol
+    lanjutkan dan ikuti petunjuk pada halaman berikutnya.
+  </p>
+
+  <p class="notice">
+    Sebelum melanjutkan, pastikan volume suara perangkat Anda sudah cukup keras.
+    Anda diwajibkan menonton video perkenalan kami terlebih dahulu agar dapat
+    mengklaim hadiah yang telah Anda dapatkan.
+  </p>
+
+  <button onclick="showWarning()">
+    LANJUTKAN →
+  </button>
+
+  <div class="footer">
+    Informasi pengambilan hadiah
+  </div>
+
+</main>
+
+<!-- Jendela peringatan -->
+<div id="warningModal" class="modal">
+  <div class="modal-content">
+
+    <div class="warning-icon">🔊</div>
+
+    <h2>Perhatian!</h2>
+
+    <p>
+      Sebelum melanjutkan, pastikan volume speaker perangkat
+      Anda sudah diatur pada tingkat yang nyaman untuk didengar.
+      Video perkenalan memiliki tingkat volume yang sangat kecil jadi tolong sedikit di perbesar volume anda agar anda nyaman saat melihat dan mendengarkan videonya.
+    </p>☺️
+
+    <button onclick="continuePage()">
+      SAYA MENGERTI & LANJUTKAN →
+    </button>
+
+    <div class="small-text">
+      Pastikan perangkat Anda siap sebelum melanjutkan.
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showWarning() {
+  document.getElementById("warningModal").style.display = "flex";
+}
+
+function continuePage() {
+  window.location.href = "terimahadiah.html";
+}
+</script>
+
+</body>
+</html>
